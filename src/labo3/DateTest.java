@@ -126,6 +126,25 @@ public class DateTest {
         assertTrue(d.compareTo(d3) == 0);
 
     }
+    @Test
+    public void testSortDate() {
+        Date d =new Date();
+        Date d2 = new Date(1,1,2000);
+        Date d3 = new Date(5,2,1999);
+        Date d4 = new Date(2,2,2001);
+        Date d5 = new Date(6,7,1999);
+        Date d6 = new Date(7,7,2005);
+        Date [] tab = {d, d2, d3, d4, d5, d6};
+        Program.sortDate(tab);
+
+        assertEquals(d3,tab[0]);
+        assertEquals(d5,tab[1]);
+        assertEquals(d2,tab[2]);
+        assertEquals(d4,tab[3]);
+        assertEquals(d6,tab[4]);
+        assertEquals(d,tab[5]);
+
+    }
 
     @Test
     public void testPersonCompareTo() {
